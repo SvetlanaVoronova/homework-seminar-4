@@ -1,0 +1,19 @@
+# Задайте последовательность чисел. Напишите программу,
+# которая выведет список неповторяющихся элементов исходной
+# последовательности. Пример: [1, 1, 2, 3, 4, 5, 5] -> [2, 3, 4]
+
+
+my_list = [1, 1, 2, 3, 4, 5, 5]
+search = set()
+search_more = set()
+
+for i in my_list:
+    if i in search_more:
+        continue
+    if i in search:
+        search.remove(i)
+        search_more.add(i)
+    else:
+        search.add(i)
+
+print(list(search))
